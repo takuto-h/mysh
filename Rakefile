@@ -18,7 +18,7 @@ end
 
 file TEST_BIN => [BIN_DIR, *(MAIN_HDR + MAIN_SRC + TEST_SRC)] do
   sh "gcc -Wall -Wextra -g -shared -o #{TEST_BIN} " +
-     "#{MAIN_SRC} #{TEST_SRC} -I#{SRC_DIR} " +
+     "#{MAIN_SRC} #{TEST_SRC} -I#{SRC_DIR} -fPIC " +
      `pkg-config --cflags cutter`
 end
 
